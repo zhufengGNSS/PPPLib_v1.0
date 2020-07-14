@@ -2103,3 +2103,21 @@ int ReadAnt::ReadAtx(vector<Ant_t>& ants) {
     inf_.close();
     return 1;
 }
+
+ReadKineRef::ReadKineRef() {
+
+}
+
+ReadKineRef::~ReadKineRef() {
+
+}
+
+void ReadKineRef::InitReadKineRef(const string& file) {
+    inf_.open(file,ios::in);
+}
+
+int ReadKineRef::ReadRef(vector<Motion_t> &monts) {
+    while(inf_.is_open()&&getline(inf_,buff_)&&!inf_.eof()){
+
+    }
+}

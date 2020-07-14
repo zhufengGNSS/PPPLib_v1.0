@@ -198,9 +198,8 @@ GNSSOpt::~GNSSOpt() {
 void GNSSOpt::SetGNSSOpt() {
     Config::Ptr_ config=Config::GetInstance();
     obs_sample_rate_=config->Get<double>("obs_sample");
-//    nav_sys_=config->Get<int>("nav_sys");
     prods_ac_=config->Get<int>("prod_ac");
-    use_frq_=config->Get<int>("num_use_frqs");
+//    use_frq_=config->Get<int>("num_use_frqs");
     use_GPS_frq_=config->Get<int>("use_GPS_frq");
     use_BD2_frq_=config->Get<int>("use_BD2_frq");
     use_BD3_frq_=config->Get<int>("use_BD3_frq");
@@ -219,7 +218,7 @@ void GNSSOpt::SetGNSSOpt() {
     sat_eph_=config->Get<int>("sat_eph");
     cb_prd_type_=config->Get<int>("cbias_prd_type");
     cb_prd_ac_=config->Get<int>("cbias_prd_ac");
-    ion_opt_=config->Get<int>("ion_opt");
+//    ion_opt_=config->Get<int>("ion_opt");
     IF3_format_=config->Get<int>("if3_opt");
     trp_opt_=config->Get<int>("trp_opt");
     trp_map_opt_=config->Get<int>("trp_map_opt");
@@ -266,8 +265,6 @@ void PrcOpt:: SetPrcOpt() {
         te_.Epoch2Time(te_.epoch_);
     }
     tu_=config->Get<double>("prc_unit");
-//    mode_=config->Get<int>("prc_mode");
-//    mode_opt_=config->Get<int>("prc_mode_opt");
     filter_type_=config->Get<int>("filter_type");
 
     GNSS_opt_.SetGNSSOpt();
@@ -278,15 +275,13 @@ void PrcOpt:: SetPrcOpt() {
 
 void PrcOpt::SetDefaultPPPOpt() {
     GNSS_opt_.prods_ac_=WUM;
-//    GNSS_opt_.use_frq_=SINGLE_FRQ;
-    GNSS_opt_.use_GPS_frq_=(GPS_L5<<8)|(GPS_L1<<4)|(GPS_L1);
-    GNSS_opt_.use_BD2_frq_=(BD2_B3I<<8)|(BD2_B2I<<4)|(BD2_B1I);
-    GNSS_opt_.use_BD3_frq_=(BD3_B2a<<8)|(BD3_B2a<<4)|(BD3_B1I);
+    GNSS_opt_.use_GPS_frq_=(GPS_L5<<8)|(GPS_L2<<4)|(GPS_L1);
+    GNSS_opt_.use_BD2_frq_=(BD2_B2I<<8)|(BD2_B3I<<4)|(BD2_B1I);
+    GNSS_opt_.use_BD3_frq_=(BD3_B2a<<8)|(BD3_B3I<<4)|(BD3_B1I);
     GNSS_opt_.use_GAL_frq_=(GAL_E5b<<8)|(GAL_E5a<<4)|(GAL_E1);
     GNSS_opt_.use_GLO_frq_=(GLO_G2<<4)|(GLO_G1);
     GNSS_opt_.use_QZS_frq_=(QZS_L5<<8)|(QZS_L2<<4)|(QZS_L1);
     GNSS_opt_.sat_eph_=PRECISE;
-//    GNSS_opt_.ion_opt_=ION_UC;
     GNSS_opt_.IF3_format_=IF3_DUAL;
     GNSS_opt_.trp_opt_=TRP_EST_WET;
     GNSS_opt_.trp_map_opt_=TRPMAP_GMF;
@@ -317,7 +312,7 @@ void FileOpt::SetFileOpt() {
 }
 
 SolOpt::SolOpt() {
-    err_fmt_=false;
+    err_fmt_=true;
     out_head_=true;
     pos_fmt_=POSFMT_ENU;
     out_sat_= true;

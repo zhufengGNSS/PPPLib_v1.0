@@ -80,6 +80,7 @@ int Parameter::NumGloPar() {
 }
 
 int Parameter::NumTrpPar() {
+    if(popt_.mode_==SPP||popt_.mode_opt_==MDOPT_SPP) return 0;
     return popt_.GNSS_opt_.trp_opt_<=TRP_SAAS?0:(popt_.GNSS_opt_.trp_opt_==TRP_EST_WET?1:3);
 }
 

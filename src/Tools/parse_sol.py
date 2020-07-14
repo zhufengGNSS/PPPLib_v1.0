@@ -1,6 +1,7 @@
 # coding: utf-8
 from collections import namedtuple
 from datetime import datetime
+import os
 
 
 class Site:
@@ -20,11 +21,10 @@ class Site:
         self.sat = []
 
 
-site = Site()
-data = []
-
-
-def parse_sol(path):
+def parse_sol(dir, site_name):
+    site = Site()
+    data = []
+    path = os.path.join(dir, site_name+'.pos')
     with open(path, 'r', encoding='utf-8') as f:
         n = 0
         t = 0
@@ -166,10 +166,10 @@ def parse_sol(path):
                     'trp': [],
                     'sat': [],
                 })
-                if t > 0:
-                    print(n, t, len(data[t-1]['sat']))
-                    # if len(data[t-1]['sat']) != 10:
-                    #     raise ValueError
+                # if t > 0:
+                # print(n, t, len(data[t-1]['sat']))
+                # if len(data[t-1]['sat']) != 10:
+                #     raise ValueError
                 t += 1
             if line .startswith('$EPOCH'):
                 tmp = data[t-1]
@@ -222,7 +222,7 @@ def parse_sol(path):
         for l in row['sat']:
             sat_id_set.add(l[0])
 
-    print('获取不重复的 sat id', len(sat_id_set))
+    # print('获取不重复的 sat id', len(sat_id_set))
 
     # 补齐每个历元缺失的 sat
     for row in data:
@@ -231,8 +231,8 @@ def parse_sol(path):
             row['sat'].append([i] + [None] * 21)
         row['sat'].sort(key=lambda x: x[0])
 
-    for row in data:
-        print(len(row['sat']))
+    # for row in data:
+    #     print(len(row['sat']))
 
     return data
 

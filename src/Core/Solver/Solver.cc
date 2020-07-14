@@ -884,7 +884,7 @@ int SPPSolver::PRErrEq(PrcOpt popt,int use_f,int idx_f,int iter,int post) {
         return 0;
     }
     omc=corr_pr-mod_pr;
-    if(epoch_count_>1&&fabs(omc)>500000) {
+    if(epoch_count_>1&&fabs(omc)>1000000) {
         LOG(WARNING)<<epoch_count_<<" "<<sig_sat_data_->sig_recep_.time_str_<<": "<<sig_sat_data_->sat_.sat_id_<<" omc abnormal";
         return 0;
     }
@@ -963,6 +963,8 @@ double SPPSolver::ModPRMeas(int post) {
     spp_ion_->sat_data_=sig_sat_data_;
     spp_ion_->IonCorr(blh);
 
+    double a=RecClkCorr(zip_x_);
+    double b=sig_sat_data_->clk_err_[0]*CLIGHT;
     mod_pr=isat_[sat-1].dist+isat_[sat-1].sagnac+RecClkCorr(zip_x_)-sig_sat_data_->clk_err_[0]*CLIGHT
             +isat_[sat-1].strp+isat_[sat-1].sion;
     return mod_pr;

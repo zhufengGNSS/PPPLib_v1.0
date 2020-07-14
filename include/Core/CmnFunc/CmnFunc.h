@@ -104,6 +104,7 @@ typedef struct { //Julian day
     Sod_t sod;
 }Mjd_t;
 
+
 // MANAVS base time class
 class Time {
 public:
@@ -144,6 +145,17 @@ public:
     int time_sys_;
     Mjd_t mjd_;
 };
+
+typedef struct {
+    Time time;
+    double re[3],ve[3];
+    double rpy[3], ba[3], bg[3];
+}Motion_t;
+
+typedef struct {
+    int n, nmax;
+    Motion_t *mots;
+}Traject;
 
 // Core math related class
 int Round(double d);

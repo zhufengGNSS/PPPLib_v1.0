@@ -246,4 +246,18 @@ public:
     string buff_;
 };
 
+class ReadKineRef {
+public:
+    ReadKineRef();
+    ~ReadKineRef();
+
+public:
+    void InitReadKineRef(const string& file);
+    int ReadRef(vector<Motion_t>& monts);
+
+public:
+    ifstream inf_;
+    string buff_;
+};
+
 #endif //MSNAVS_READFILES_H

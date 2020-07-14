@@ -277,3 +277,29 @@ def get_rmse(records):
         return math.sqrt(mse)
     else:
         return None
+
+
+def seri_cover(seri, t, thres):
+    num_cover = 20
+    cover_flag = 0
+    j = 0
+    k = 0
+    epoch = len(seri)
+    for i in range(1, epoch-num_cover):
+        if abs(seri[i]) < thres:
+            k = 0
+            for j in range(i, i+num_cover):
+                if abs(seri[j]) < thres:
+                    k = k+1
+                if k == num_cover:
+                    cover_flag = 1
+                    break
+        if cover_flag:
+            break
+    cover_time_tag = t[j]
+    cover_min = cover_time_tag.hour*60 + cover_time_tag.minute + cover_time_tag.second/60
+    seri_temp = tuple(seri[j:])
+    rms = get_rms(seri_temp)
+    std = get_standard_deviation(seri_temp)
+
+    return [cover_min, rms, std]

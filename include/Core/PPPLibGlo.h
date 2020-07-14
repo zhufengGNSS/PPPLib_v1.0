@@ -49,7 +49,7 @@ const string kListModesStr[]={
         "SPP","PPP","DGPS","PPK","FIXED"
 };
 const string kListModOptsStr[]={
-        "STATIC","KINE","KINE-SIM","SPP","PPP","DGPS","PPK"
+        "STATIC","KINE_SIM","KINE","SPP","PPP","DGPS","PPK"
 };
 const string kListSolStatStr[]={
         "NONE","SPP","P3SPP","PPP","PPP-FIX","DGPS","PPK","PPK-FIX"
