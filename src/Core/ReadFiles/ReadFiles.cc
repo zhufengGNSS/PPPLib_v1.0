@@ -414,7 +414,7 @@ int MatchFile::MatchOut() {
     }
     else{
         if(kFileOpt.customize_file_){
-            sprintf(f,"%s%cresult_brd%c",dir_.c_str(),sep_);
+            sprintf(f,"%s%cresult_brd%c",dir_.c_str(),sep_,sep_);
         }else sprintf(f,"%s%c%d%c%d%c%03d%cresult_brd%c",dir_.c_str(),sep_,year_,sep_,week_,sep_,doy_,sep_,sep_);
     }
     out_dir=f;

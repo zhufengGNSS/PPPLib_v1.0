@@ -348,7 +348,7 @@ def walk_files(dir):
 
 
 if __name__ == '__main__':
-    sol_dir = '../../example/result_wum/SPP_STATIC'
+    sol_dir = '../../example/result_brd/SPP_STATIC'
     DOP_PLOT = 1
     ENU_PLOT = 1
     TRP_PLOT = 1
