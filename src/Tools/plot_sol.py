@@ -348,12 +348,12 @@ def walk_files(dir):
 
 
 if __name__ == '__main__':
-    sol_dir = '../../example/result_wum/PPP_STATIC'
+    sol_dir = '../../example/result_brd/SPP_STATIC'
     DOP_PLOT = 1
     ENU_PLOT = 1
     TRP_PLOT = 1
-    SAT_PLOT = RES_L1
-    SAT_ID = 'G10'
+    SAT_PLOT = AMB1
+    SAT_ID = 'C10'
     walk_files(sol_dir)
 
 
