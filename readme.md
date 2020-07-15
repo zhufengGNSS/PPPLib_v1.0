@@ -41,9 +41,9 @@ PPPLib采用Cmake进行工程管理，目前软件仅支持在linux下的编译�
     cd [Your Path]/PPPLib/bin \
     ./PPPMain -pd 2019/12/01 -do 1 -level 128 -sys GBERJ -md PPP-KINE -ion 4 -frq 1   \
     具体配置信息可以查看用户文档([Your Path]/PPPLib/doc/PPPLib用户手册) 
-一组示例数据上传至百度云，扫码下载后放至项目根目录下即可
+    
+一组示例数据和结果上传至百度云(https://pan.baidu.com/s/1vAlyb5iIxfVujHJ_asUb0w password: 1234)，下载后放至项目根目录下即可
 
-[![U9KKHO.th.jpg](https://s1.ax1x.com/2020/07/05/U9KKHO.th.jpg)](https://imgchr.com/i/U9KKHO)
 
 ## 3. 待完善
 总结了目前PPPLib有待改进的点，个人能力有限，如果有好的建议可以直接联系本人，一起完善PPPLib。 
@@ -118,9 +118,9 @@ The test system includes the virtual machine Ubantu 16.0, Ubantu 16.0 and Win10.
        ./PPPMain -pd 2019/12/01 -do 1 -level 128 -sys GBERJ -md PPP-KINE -ion 4 -frq 3
 For more specific configuration information, please refer to PPPLib user manual.     
 
-Upload a set of sample data to Baidu Cloud, please scan the code to download. Then place the example folder in the root directory
 
-[![U9KKHO.th.jpg](https://s1.ax1x.com/2020/07/05/U9KKHO.th.jpg)](https://imgchr.com/i/U9KKHO)
+Upload a set of sample data to Baidu Cloud (https://pan.baidu.com/s/1vAlyb5iIxfVujHJ_asUb0w password: 1234), please scan the code to download. Then place the example folder in the root directory
+
 
 
 ## 3. To be improved
