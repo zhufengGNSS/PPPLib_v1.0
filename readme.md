@@ -2,6 +2,8 @@
 ![N1hvPe.png](https://s1.ax1x.com/2020/06/21/N1hvPe.png)
 ## 0. 更新日志
     2020/06/21 PPPLib v1.0发布，支持GBERJ单频-三频非组合/组合PPP解算
+    2020/08/03 近期将更新v2.0版本，重构了v1.0代码，使程序结构更加合理，支持惯导解算
+
 
 ## 1. 关于PPPLib
 Precise Point Positioning Libary(PPPLib)是一款采用C/C++语言编写的多模多频GNSS-PPP数据处理算法库；主要功能包括：
